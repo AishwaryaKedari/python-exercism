@@ -1,0 +1,8 @@
+def abbreviate(words):
+    result=""
+    words= words.replace('-',' ').replace('_',' ')
+    myList=words.split()
+    str=[x[0] for x in myList]
+    return((result.join(str)).upper())
+    
+        
