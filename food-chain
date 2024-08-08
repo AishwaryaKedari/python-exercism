@@ -1,0 +1,26 @@
+def recite(start_verse, end_verse):
+    song=[]
+    names = ["fly","spider","bird","cat","dog","goat","cow","horse"]
+    middle_lines = " wriggled and jiggled and tickled inside her"
+    lines = ['','',"How absurd","Imagine that,","What a hog,","Just opened her throat and","I don't know how she",""]
+    for verses in range(start_verse, end_verse+1):
+        if verses != 8:
+            for verse in range(verses-1,-1,-1):
+                if verse == verses-1:
+                    song.append(f"I know an old lady who swallowed a {names[verse]}.")
+                    if verse == 0: pass
+                    elif verse == 1:
+                        song.append(f"It{middle_lines}.")
+                    elif 5 > verse > 1:
+                        song.append(f"{lines[verse]} to swallow a {names[verse]}!")
+                    else: song.append(f"{lines[verse]} swallowed a {names[verse]}!")
+                elif verse == 1:
+                    song.append(f"She swallowed the {names[verse+1]} to catch the {names[verse]} that{middle_lines}.")
+                else:
+                    song.append(f"She swallowed the {names[verse+1]} to catch the {names[verse]}.")
+            song.append("I don't know why she swallowed the fly. Perhaps she'll die.")
+        else:
+            song.append(f"I know an old lady who swallowed a {names[verses-1]}.")
+            song.append("She's dead, of course!")
+        if verses != end_verse: song.append("")
+    return song
