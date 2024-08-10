@@ -1,0 +1,22 @@
+# check given number is numberic or Not 
+# check length of given series
+# if given length is greater than series length then print err msg
+# else print the substring of length 
+
+def slices(series, length):
+    st_len=len(series)
+    list=[]
+    if length==0:
+         raise ValueError("slice length cannot be zero")
+    elif not series:
+        raise ValueError("series cannot be empty")
+    elif st_len<length:
+        raise ValueError("slice length cannot be greater than series length")
+    elif length<0:
+        raise ValueError("slice length cannot be negative")
+    
+
+    for i in range(st_len-length+1):
+        re=series[i:i+length]
+        list.append(re)
+    return list
