@@ -1,0 +1,19 @@
+def flatten(iterable):
+    new_list = []
+    for i in iterable:
+        if(type(i) == type(list())):
+            if(len(i)):
+                new_list += flatten(i)
+        else:
+            if(i is not None):
+                try:
+                    if(len(i)):
+                        new_list.append(i)
+                except TypeError:
+                    new_list.append(i)
+    return new_list
+
+
+
+
+print(flatten([()]))
