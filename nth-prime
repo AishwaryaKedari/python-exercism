@@ -1,0 +1,16 @@
+def prime(number):
+    # if number==0:
+    #     raise ValueError('there is no zeroth prime')
+    if number <1:
+        raise ValueError('there is no zeroth prime')
+    prime_list = [2]
+    check = 3
+    while len (prime_list) < number:
+        for prime_num in prime_list:
+            if check % prime_num == 0:
+                break
+        else:
+            prime_list.append(check)
+        check += 2
+    return prime_list[-1]
+   
